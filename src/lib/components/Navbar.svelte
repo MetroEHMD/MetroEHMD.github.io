@@ -18,7 +18,6 @@
 		} else if (isCollapsed && scroll < scrollThreshold - margin) {
 			isCollapsed = false;
 		}
-		console.log(`Scroll: ${scroll}`);
 	}
 </script>
 
@@ -29,16 +28,15 @@
 		<img id="metrobots-logo" src={metrobotsLogo} alt="Metrobots Logo" />
 	</a>
 	<div id="page-links">
-		<p>About Us</p>
-		<p>Our Season</p>
-		<p>Our Community</p>
-		<p>Resources</p>
+		<a href={resolve('/about')}>About Us</a>
+		<a href={resolve('/season')}>Our Season</a>
+		<a href={resolve('/resources')}>Resources</a>
 	</div>
 </nav>
 
 <style>
 	nav {
-		background-color: lightblue;
+		background-color: rgb(100, 155, 255);
 		height: 15vh;
 		padding: 0 2vw;
 
@@ -61,8 +59,12 @@
 	nav a {
 		height: 100%;
 
+		text-decoration: none;
+
 		display: flex;
 		align-items: center;
+
+		color: black;
 	}
 
 	#metrobots-logo {

@@ -1,13 +1,21 @@
+<script>
+	import PhotoCarousel from '$lib/components/PhotoCarousel.svelte';
+</script>
+
 <main>
-	<h1>Welcome to the Metrobots Website</h1>
+	<h1>Welcome to the Metrobots</h1>
 	<p>
-		Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium animi perspiciatis ea
+		facilis aspernatur at similique impedit deserunt ipsam, mollitia asperiores a nostrum nihil
+		molestiae architecto vitae ut quis ad.
 	</p>
+
+	<PhotoCarousel />
 </main>
 
 <style>
 	main {
 		padding: 2vw 5vw;
-		min-height: 200vh;
+		min-height: 70vh;
 	}
 </style>

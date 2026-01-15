@@ -1,5 +1,4 @@
 <script>
-	import { resolve } from '$app/paths';
 	import email_logo from '$lib/assets/logos/email.png';
 	import github_logo from '$lib/assets/logos/github.png';
 </script>
@@ -22,11 +21,11 @@
 
 <style>
 	footer {
+		background-color: rgb(100, 155, 255);
+
 		min-height: 15vh;
 
 		padding: 2vh 5vw;
-
-		background-color: slategray;
 	}
 
 	#links-container {
@@ -36,6 +35,8 @@
 
 	#links-container a {
 		height: 100%;
+
+		text-decoration: none;
 
 		display: flex;
 		align-items: center;
