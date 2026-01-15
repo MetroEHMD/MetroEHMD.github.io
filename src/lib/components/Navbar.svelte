@@ -1,4 +1,6 @@
 <script>
+	import { resolve } from '$app/paths';
+
 	// TODO: Move logo to appropriate directory.
 	import metrobotsLogo from '$lib/assets/gdb.png';
 
@@ -9,11 +11,11 @@
 		const scrollThreshold = 50;
 		/* It's necessary to have a margin of error, since changing the size of
         the navbar changes the scroll of he window. */
-		const margin = 10;
+		const margin = 30;
 		isCollapsed = scroll > scrollThreshold;
 		if (!isCollapsed && scroll > scrollThreshold + margin) {
 			isCollapsed = true;
-		} else if (isCollapsed && scroll < scrollThreshold + margin) {
+		} else if (isCollapsed && scroll < scrollThreshold - margin) {
 			isCollapsed = false;
 		}
 		console.log(`Scroll: ${scroll}`);
@@ -23,7 +25,9 @@
 <svelte:window onscroll={handle_scroll} />
 
 <nav class:isCollapsed>
-	<img id="metrobots-logo" src={metrobotsLogo} alt="Metrobots Logo" />
+	<a href={resolve('/')}>
+		<img id="metrobots-logo" src={metrobotsLogo} alt="Metrobots Logo" />
+	</a>
 	<div id="page-links">
 		<p>About Us</p>
 		<p>Our Season</p>
@@ -42,7 +46,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		transition: height 0.25s ease;
+		transition: height 0.5s ease;
 
 		display: flex;
 		flex-direction: row;
@@ -52,6 +56,13 @@
 
 	nav.isCollapsed {
 		height: 8vh;
+	}
+
+	nav a {
+		height: 100%;
+
+		display: flex;
+		align-items: center;
 	}
 
 	#metrobots-logo {
