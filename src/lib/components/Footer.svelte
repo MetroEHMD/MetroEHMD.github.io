@@ -5,13 +5,13 @@
 
 <footer>
 	<div id="links-container">
-		<a href="mailto:team3324metrobots@gmail.com">
+		<a href="mailto:team3324metrobots@gmail.com" target="_blank">
 			<img src={email_logo} alt="Metrobots Email" />
 			<span class="horizontal-spacer"></span>
 			<p>Email: team3324metrobots@gmail.com</p>
 		</a>
 		<span class="vertical-spacer"></span>
-		<a href="https://github.com/metrobots">
+		<a href="https://github.com/metrobots" target="_blank">
 			<img src={github_logo} alt="Metrobots Github" />
 			<span class="horizontal-spacer"></span>
 			<p>Github: metrobots</p>
