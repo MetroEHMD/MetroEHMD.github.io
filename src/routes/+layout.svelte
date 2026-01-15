@@ -17,15 +17,6 @@
 
 <Navbar />
 
-<main>
-	{@render children()}
-</main>
+{@render children()}
 
 <Footer />
-
-<style>
-	main {
-		padding: 2vw 5vw;
-		min-height: 70vh;
-	}
-</style>
