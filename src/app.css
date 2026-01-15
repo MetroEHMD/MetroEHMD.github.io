@@ -6,3 +6,7 @@
     line-height: 2;
     color: black;
 }
+
+main {
+    min-height: 70vh;
+}

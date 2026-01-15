@@ -17,6 +17,7 @@
 
 <Navbar />
 
+<!-- Render the current page. -->
 {@render children()}
 
 <Footer />

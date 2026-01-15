@@ -2,7 +2,7 @@
 	import { resolve } from '$app/paths';
 
 	// TODO: Move logo to appropriate directory.
-	import metrobotsLogo from '$lib/assets/gdb.png';
+	import metrobotsLogo from '$lib/assets/favicon/fancy-metrobots-logo.png';
 
 	let isCollapsed = $state(false);
 
