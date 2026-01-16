@@ -2,14 +2,14 @@
 
 This website is built using [SvelteKit](https://svelte.dev/docs/kit/introduction). Svelte code is
 compliant with HTML, so you can copy and paste code from the main website into SvelteKit just fine
-([with one exception](#html-compatibility-exception) that I know of). The website using the
+([with one exception](#html-compatibility-exception) that I know of). The website uses the
 [static adapter](https://svelte.dev/docs/kit/adapter-static) so it can deployed using Github Pages.
-The only difference this makes is that there's no server-side code, but that shouldn't make a
-difference for this website.
+The only difference this makes from traditional SvelteKit projects is that there's no server-side
+code, but that shouldn't make a difference for this website.
 
 ## HTML Compatibility Exception
 
-Svelte doesn't allow you to excute javascript in quotes. For example, in HTML, you can write code
+Svelte doesn't allow you to excute JavaScript in quotes. For example, in HTML, you can write code
 like
 
 ```html
@@ -34,7 +34,7 @@ However, in Svelte, you need to write it using curly braces.
 <button onclick={doSomething}>Click Me</button>
 ```
 
-If you need to pass parameters to the function, write it like this
+If you need to pass arguments to the function, write it like this
 
 ```svelte
 <script>
@@ -48,9 +48,17 @@ If you need to pass parameters to the function, write it like this
 
 # Running
 
+If you are just editing text, then [GitHub Codespaces](https://github.com/features/codespaces)
+should work just fine. However, if you are making **ANY** UI changes, then you should preview the
+website locally before publishing those changes.
+
+## Tooling
+
 You need [Node.js](https://nodejs.org/en) installed to view the website locally. If you do not have
 Node.js installed, open the "terminal" app on you laptop and run these commands (copy and paste, the
 press enter).
+
+### Node.js
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -64,6 +72,8 @@ To verify that the install suceeded, run these commands in the terminal.
 node -v
 npm -v
 ```
+
+### Git
 
 Now, you need to download the code. It's necessary to use [Git](https://git-scm.com/install/mac) to
 update code when you make changes on your laptop. There are multiple methods, but the easiest (and
@@ -85,8 +95,20 @@ cd metrobots-sveltekit
 git checkout sveltekit
 ```
 
-Now, whenever you want to see the current state of the website, open the project in Visual Studio
-Code and run `npm run dev` in the terminal.
+The line `git checkout sveltekit` is very important because I am **NOT** working on the main branch.
+Alternatively, you could use the "Download ZIP" option on Github. Now, whenever you want to see the
+current state of the website, open the project in Visual Studio Code and run this in the terminal.
+
+```bash
+npm run dev
+```
+
+If you want the most up-to-date changes, run this instead.
+
+```bash
+git pull --rebase
+npm run dev
+```
 
 # Editing
 
