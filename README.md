@@ -85,6 +85,9 @@ cd metrobots-sveltekit
 git checkout sveltekit
 ```
 
+Now, whenever you want to see the current state of the website, open the project in Visual Studio
+Code and run `npm run dev` in the terminal.
+
 # Editing
 
 Refer to [Project Structure](#project-structure) for details about where to place/edit files. The
