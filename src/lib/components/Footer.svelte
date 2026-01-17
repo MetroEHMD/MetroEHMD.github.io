@@ -21,7 +21,7 @@
 
 <style>
 	footer {
-		background-color: rgb(100, 155, 255);
+		background-color: var(--background-color);
 
 		min-height: 15vh;
 
@@ -44,6 +44,12 @@
 
 	#links-container img {
 		width: 5vw;
+		background-color: white;
+		border-radius: 10px;
+	}
+
+	#links-container p {
+		color: white;
 	}
 
 	.horizontal-spacer {

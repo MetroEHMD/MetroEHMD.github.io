@@ -37,9 +37,9 @@
 
 <style>
 	nav {
-		background-color: rgb(100, 155, 255);
+		background-color: var(--background-color);
 		height: 15vh;
-		padding: 0 2vw;
+		padding: 2vh 2vw;
 
 		position: sticky;
 		top: 0;
@@ -66,11 +66,13 @@
 		display: flex;
 		align-items: center;
 
-		color: black;
+		color: var(--on-background-color);
 	}
 
 	#metrobots-logo {
 		height: 80%;
+		background-color: white;
+		border-radius: 30px;
 	}
 
 	#page-links {
