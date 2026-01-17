@@ -2,6 +2,10 @@
 	import { page } from '$app/state';
 </script>
 
+<svelte:head>
+	<title>Error Page</title>
+</svelte:head>
+
 <main>
 	<h1>Error: {page.error.message}</h1>
 	<p>Page Not Found</p>

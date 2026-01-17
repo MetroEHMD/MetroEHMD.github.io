@@ -54,6 +54,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Leadership</title>
+</svelte:head>
+
 <main>
 	<div id="managers-container">
 		{#each managers as manager}

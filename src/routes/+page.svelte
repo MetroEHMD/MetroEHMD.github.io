@@ -2,6 +2,10 @@
 	import PhotoCarousel from '$lib/components/PhotoCarousel.svelte';
 </script>
 
+<svelte:head>
+	<title>Home</title>
+</svelte:head>
+
 <main>
 	<h1>Welcome to the Metrobots</h1>
 	<p>

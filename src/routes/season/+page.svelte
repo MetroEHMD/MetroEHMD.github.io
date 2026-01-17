@@ -9,6 +9,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>2025 - 2026 Season</title>
+</svelte:head>
+
 <main>
 	<h1>Calendar</h1>
 	<div id="calendar-container">

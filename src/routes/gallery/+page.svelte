@@ -62,6 +62,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Gallery</title>
+</svelte:head>
+
 <main>
 	<div id="gallery-photos-container">
 		{#each photos as photo, index}
