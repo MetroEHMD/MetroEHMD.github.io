@@ -28,7 +28,6 @@
 	import image27 from '$lib/assets/images/gallery/27.jpg';
 	import image28 from '$lib/assets/images/gallery/28.jpg';
 	import image29 from '$lib/assets/images/gallery/29.png';
-	import { index } from 'svelte/internal/client';
 
 	const photos = [
 		image1,
