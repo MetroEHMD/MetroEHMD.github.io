@@ -10,6 +10,7 @@
 </script>
 
 <main>
+	<h1>Calendar</h1>
 	<div id="calendar-container">
 		<Calendar {options} />
 	</div>
@@ -18,7 +19,8 @@
 <style>
 	main {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		align-items: center;
 		padding: 50px;
 	}
 

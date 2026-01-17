@@ -28,8 +28,8 @@
 		<img id="metrobots-logo" src={metrobotsLogo} alt="Metrobots Logo" />
 	</a>
 	<div id="page-links">
-		<a href={resolve('/about')}>About Us</a>
-		<a href={resolve('/season')}>Our Season</a>
+		<a href={resolve('/leadership')}>Leadership</a>
+		<a href={resolve('/season')}>Season</a>
 		<a href={resolve('/resources')}>Resources</a>
 	</div>
 </nav>
