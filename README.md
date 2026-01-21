@@ -7,6 +7,13 @@ compliant with HTML, so you can copy and paste code from the main website into S
 The only difference this makes from traditional SvelteKit projects is that there's no server-side
 code, but that shouldn't make a difference for this website.
 
+# Table of Contents
+
+- [HTML Compatibility](#html-compatibility-exception)
+- [Running](#running)
+- [Editing](#editing)
+- [Project Structure](#project-structure)
+
 ## HTML Compatibility Exception
 
 Svelte doesn't allow you to excute JavaScript in quotes. For example, in HTML, you can write code
