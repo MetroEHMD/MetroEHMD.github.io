@@ -78,10 +78,18 @@
 	#carousel-controls {
 		display: grid;
 		grid-template-columns: auto auto auto;
-		column-gap: 20px;
+		column-gap: 30px;
+		align-items: center;
 	}
 
 	#carousel-controls button {
 		aspect-ratio: 1 / 1;
+		background: none;
+		border: none;
+		font-size: 2em;
+	}
+
+	#carousel-controls button:hover {
+		cursor: pointer;
 	}
 </style>
