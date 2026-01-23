@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Metrobots 3324 - FIRST Robotics Team">
+  <meta name="keywords" content="Metrobots, FIRST Robotics, Team 3324, Robotics">
+  <title>Resources</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://metrobots.github.io/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://metrobots.github.io/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://metrobots.github.io/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://metrobots.github.io/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="https://metrobots.github.io/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#333333">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-image: url(https://github.com/misalagp/imgs/blob/main/noise.png?raw=true), radial-gradient(at center top, rgb(255, 255, 255) 0%, rgb(221, 221, 221) 100%);
+      color: #2c2c2c;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .text-no-decoration {
+      text-decoration: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .title {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .button {
+      background-color: transparent;
+      color: #2c2c2c;
+      padding: 10px 20px;
+      margin: 5px;
+      border: 2px solid #2c2c2c;
+      border-radius: 5px;
+      font-family: 'Space Mono', monospace;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      transform: translateY(20px);
+      position: relative;
+    }
+
+    .button:hover {
+      background-color: #2c2c2c;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .button:focus {
+      outline: none;
+      box-shadow: 0 0 10px darkRed;
+    }
+
+    .button:nth-child(1) {
+      animation: slideFadeIn 0.9s ease forwards 0.3s;
+    }
+
+    .button:nth-child(2) {
+      animation: slideFadeIn 0.9s ease forwards 0.4s;
+    }
+
+    .button:nth-child(3) {
+      animation: slideFadeIn 0.9s ease forwards 0.5s;
+    }
+
+    .button:nth-child(4) {
+      animation: slideFadeIn 0.9s ease forwards 0.6s;
+    }
+    
+    .button:nth-child(5) {
+      animation: slideFadeIn 0.9s ease forwards 0.7s;
+    }
+
+    .button:nth-child(6) {
+      animation: slideFadeIn 0.9s ease forwards 0.8s;
+    }
+
+    .button:nth-child(7) {
+      animation: slideFadeIn 0.9s ease forwards 0.9s;
+    }
+
+    @keyframes slideFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      background-size: cover;
+    }
+
+    .instagram-logo {
+      background-image: url('https://metrobots.github.io/assets/logos/4.png');
+    }
+    
+    .twitter-logo {
+      background-image: url('https://metrobots.github.io/assets/logos/3.png');
+    }
+    
+    .github-logo {
+      background-image: url('https://metrobots.github.io/assets/logos/1.png');
+    }
+    
+    .youtube-logo {
+      background-image: url('https://metrobots.github.io/assets/logos/2.png');
+    }
+    
+    .mail-logo {
+      background-image: url('https://metrobots.github.io/assets/logos/5.png');
+      width: 33px;
+    }
+
+    .button:hover .instagram-logo {
+      background-image: url('https://metrobots.github.io/assets/instagram-white-icon.png');
+    }
+    
+    .button:hover .twitter-logo {
+      background-image: url('https://metrobots.github.io/assets/twitter-512.png');
+    }
+    
+    .button:hover .github-logo {
+      background-image: url('https://metrobots.github.io/assets/github.png');
+    }
+    
+    .button:hover .youtube-logo {
+      background-image: url('https://metrobots.github.io/assets/youtube-app-white-icon.png');
+    }
+    
+    .button:hover .mail-logo {
+      background-image: url('https://metrobots.github.io/assets/image-removebg-preview.png');
+      width: 33px;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 120%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      width: 150px;
+    }
+
+    .button:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .home-button::before {
+      content: '\f015'; /* Font Awesome home icon */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <center><h1 class="title">TEAM 3324 RESOURCES</h1></center>
+    <div class="button-container">
+      <a href="swervesim/" class="button text-no-decoration">Swerve Simulator</a>
+      <a href="scouting/" class="button text-no-decoration">Scouting App</a>
+      <a href="https://www.instagram.com/metrobots3324/" class="button text-no-decoration" target="_blank">
+        <span class="icon instagram-logo"></span>
+        <span class="tooltip">Follow us on Instagram</span>
+      </a>
+      <a href="https://twitter.com/metrobots3324?lang=en" class="button text-no-decoration" target="_blank">
+        <span class="icon twitter-logo"></span>
+        <span class="tooltip">Follow us on Twitter</span>
+      </a>
+      <a href="https://github.com/Mateo-Johnson/RobustSturdy3" class="button text-no-decoration" target="_blank">
+        <span class="icon github-logo"></span>
+        <span class="tooltip">Check out our GitHub</span>
+      </a>
+      <a href="https://www.youtube.com/@TeamMetrobots/featured" class="button text-no-decoration" target="_blank">
+        <span class="icon youtube-logo"></span>
+        <span class="tooltip">Watch our YouTube videos</span>
+      </a>
+      <a href="mailto:team3324metrobots@gmail.com" class="button text-no-decoration mail-button" target="_blank">
+        <span class="icon mail-logo"></span>
+        <span class="tooltip">Right-click to copy email</span>
+      </a>
+    </div>
+  </div>
+
+  <a href="#" class="home-button" id="homeButton"></a>
+
+  <script>
+    document.getElementById('homeButton').addEventListener('click', function() {
+      window.location.href = 'https://metrobots.github.io';
+    });
+
+    document.querySelector('.mail-button').addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+      const email = 'team3324metrobots@gmail.com';
+     
+    });
+  </script>
+</body>
+</html>
