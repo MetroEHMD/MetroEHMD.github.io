@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Error Page</title>
+	<title>Error Page | Metrobots</title>
 </svelte:head>
 
 <main>

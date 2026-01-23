@@ -55,7 +55,7 @@
 </script>
 
 <svelte:head>
-	<title>Leadership</title>
+	<title>Leadership | Metrobots</title>
 </svelte:head>
 
 <main>

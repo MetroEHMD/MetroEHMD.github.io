@@ -63,7 +63,7 @@
 </script>
 
 <svelte:head>
-	<title>Gallery</title>
+	<title>Gallery | Metrobots</title>
 </svelte:head>
 
 <main>

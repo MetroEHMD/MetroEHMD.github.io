@@ -8,7 +8,7 @@
 <svelte:window bind:innerHeight bind:innerWidth />
 
 <svelte:head>
-	<title>Home</title>
+	<title>Home | Metrobots</title>
 </svelte:head>
 
 <main>

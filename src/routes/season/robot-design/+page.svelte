@@ -1,3 +1,3 @@
 <svelte:head>
-	<title>Robot Game</title>
+	<title>Robot Game | Metrobots</title>
 </svelte:head>
