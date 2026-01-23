@@ -3,30 +3,42 @@
 	import hamburgerIcon from '$lib/assets/icons/hamburger_menu.svg';
 	import metrobotsLogo from '$lib/assets/favicon/fancy-metrobots-logo.png';
 
-	// Used on on desktop to collapse navbar on scroll.
+	// Used to collapse navbar on scroll.
 	let isCollapsed = $state(false);
 	// Use for mobile navigation
-	let isHidden = $state(true);
+	let isOpen = $state(true);
+	// Used to fix weird-looking behavior when window is resized.
+	let allowTransition = $state(true);
+	let timeoutId = $state();
 
 	function handle_scroll() {
 		isCollapsed = window.scrollY > 0;
 	}
 
+	function handle_resize() {
+		isOpen = false;
+		allowTransition = false;
+		clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => {
+			allowTransition = true;
+		}, 500);
+	}
+
 	function handle_hamburger() {
-		isHidden = !isHidden;
+		isOpen = !isOpen;
 	}
 </script>
 
-<svelte:window onscroll={handle_scroll} />
+<svelte:window onscroll={handle_scroll} onresize={handle_resize} />
 
-<nav class:isCollapsed class:isHidden>
+<nav class:isCollapsed class:isOpen>
 	<a href={resolve('/')}>
 		<img id="metrobots-logo" src={metrobotsLogo} alt="Metrobots Logo" />
 	</a>
 	<button onclick={handle_hamburger} id="hamburger-button">
 		<img src={hamburgerIcon} alt="" />
 	</button>
-	<div id="page-links" class:isHidden>
+	<div id="page-links" class:isOpen class:allowTransition>
 		<a href={resolve('/leadership')}>Leadership</a>
 		<a href={resolve('/season')}>2025-2026 Season</a>
 		<a href={resolve('/resources')}>Resources</a>
@@ -93,20 +105,13 @@
 	}
 
 	/* TODO: Change this to a less arbitrary value. */
-	@media (width <= 900px) {
+	@media (max-width: 700px) {
 		#hamburger-button {
 			display: inline-block;
 		}
 
-		#page-links.isHidden {
-			display: none;
-		}
-
-		#page-links:not(.isHidden) {
-			animation-name: slide-from-top;
-			animation-duration: 1s;
-
-			position: fixed;
+		#page-links {
+			position: absolute;
 			top: 19vh;
 			left: 0;
 			right: 0;
@@ -117,21 +122,23 @@
 			flex-direction: column;
 			align-items: center;
 
-			background-color: var(--secondary-background-color);
+			background-color: color-mix(in srgb, var(--secondary-background-color) 98%, transparent);
+
+			transform: translateY(-50vh);
+			pointer-events: none;
 		}
 
-		nav.isCollapsed #page-links:not(.isHidden) {
+		#page-links.allowTransition {
+			transition: transform 0.5s ease;
+		}
+
+		#page-links.isOpen {
+			transform: translateY(0);
+			pointer-events: auto;
+		}
+
+		nav.isCollapsed #page-links {
 			top: 12vh;
-		}
-
-		@keyframes slide-from-top {
-			from {
-				translate: 0 -50vh;
-			}
-
-			to {
-				translate: 0;
-			}
 		}
 	}
 </style>
