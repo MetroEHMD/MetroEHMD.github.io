@@ -9,7 +9,7 @@ code, but that shouldn't make a difference for this website.
 
 # Table of Contents
 
-- [HTML Compatibility](#html-compatibility-exception)
+- [HTML Compatibility](#html-compatibility-exceptions)
   - [Quoted JavaScript](#quoted-javascript)
   - [DOM Manipulation](#dom-manipulation)
 - [Running](#running)
