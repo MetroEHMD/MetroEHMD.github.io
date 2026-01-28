@@ -1,5 +1,6 @@
 <script>
 	import PhotoCarousel from '$lib/components/PhotoCarousel.svelte';
+	import { onMount } from 'svelte';
 
 	let innerWidth = $state(0);
 	let innerHeight = $state(0);

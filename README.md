@@ -2,7 +2,7 @@
 
 This website is built using [SvelteKit](https://svelte.dev/docs/kit/introduction). Svelte code is
 compliant with HTML, so you can copy and paste code from the main website into SvelteKit just fine
-([with one exception](#html-compatibility-exception) that I know of). The website uses the
+([with two exceptions](#html-compatibility-exception) that I know of). The website uses the
 [static adapter](https://svelte.dev/docs/kit/adapter-static) so it can deployed using Github Pages.
 The only difference this makes from traditional SvelteKit projects is that there's no server-side
 code, but that shouldn't make a difference for this website.
@@ -10,11 +10,18 @@ code, but that shouldn't make a difference for this website.
 # Table of Contents
 
 - [HTML Compatibility](#html-compatibility-exception)
+  - [Quoted JavaScript](#quoted-javascript)
+  - [DOM Manipulation](#dom-manipulation)
 - [Running](#running)
+  - [Tooling](#tooling)
+    - [Node.js](#nodejs)
+    - [Git](#git)
 - [Editing](#editing)
 - [Project Structure](#project-structure)
 
-## HTML Compatibility Exception
+## HTML Compatibility Exceptions
+
+### Quoted JavaScript
 
 Svelte doesn't allow you to excute JavaScript in quotes. For example, in HTML, you can write code
 like
@@ -51,6 +58,69 @@ If you need to pass arguments to the function, write it like this
 </script>
 
 <button onclick={() => doSomething('Something')}>Click Me</button>
+```
+
+### DOM Manipulation
+
+If you have code which manipulates the DOM, you need to put it in the `onMount()` function either
+the `+page.svelte` or component file. This is because code in the `<script>` tags is run while the
+comopnent is being instantiated.
+
+Each of the following snippets are identical in function. They set the text color to red after 1000
+ms (1 second).
+
+```svelte
+<script>
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		let p1 = document.getElementById('p1');
+		setTimeout(() => {
+			p1.style.color = 'red';
+		}, 1000);
+	});
+</script>
+
+<p id="p1">Hello, World.</p>
+```
+
+However, it is best practice in Svelte to **NOT** use `document.getElementById()`. Instead, you
+should either bind the element directly to a variable or you should bind the value to a variable.
+
+#### Binding Element to Variable
+
+```svelte
+<script>
+	import { onMount } from 'svelte';
+
+	let p1;
+
+	onMount(() => {
+		setTimeout(() => {
+			p1.style.color = 'red';
+		}, 1000);
+	});
+</script>
+
+<p bind:this={p1}>Hello, World.</p>
+```
+
+or
+
+```svelte
+<script>
+	import { onMount } from 'svelte';
+
+	let p1Color = $state('black');
+
+	onMount(() => {
+		setTimeout(() => {
+			p1Color = 'red';
+		}, 1000);
+	});
+</script>
+
+<p style:color={p1Color}>Hello, World.</p>
 ```
 
 # Running
@@ -131,8 +201,8 @@ Svelte extension installed. I plan on making a proper style guide in the future.
 
 - `src/routes/+page.svelte` - This is the homepage of the website.
 
-- `src/lib/assets/` - All images should be placed in an appropriate subdirectory. Prefer `.svg` files
-  over `.png` or `.jpeg` when possible. They can be accessed in code using
+- `src/lib/assets/` - All images should be placed in an appropriate subdirectory. Prefer `.svg`
+  files over `.png` or `.jpeg` when possible. They can be accessed in code using
 
 - `src/lib/components` - All reusable Svelte components should be placed in this directory.
 
