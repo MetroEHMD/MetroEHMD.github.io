@@ -5,7 +5,7 @@ compliant with HTML, so you can copy and paste code from the main website into S
 (with two exceptions that I know of). The website uses the
 [static adapter](https://svelte.dev/docs/kit/adapter-static) so it can deployed using Github Pages.
 The only difference this makes from traditional SvelteKit projects is that there's no server-side
-code, but that shouldn't make a difference for this website.
+code, but that shouldn't make a difference for this website. 
 
 # Table of Contents
 
