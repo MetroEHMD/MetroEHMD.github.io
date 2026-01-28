@@ -40,7 +40,7 @@
 	</button>
 	<div id="page-links" class:isOpen class:allowTransition>
 		<a href={resolve('/leadership')}>Leadership</a>
-		<a href={resolve('/season')}>2025-2026 Season</a>
+		<a href={resolve('/season/2025-2026')}>2025-2026 Season</a>
 		<a href={resolve('/resources')}>Resources</a>
 		<a href={resolve('/gallery')}>Gallery</a>
 	</div>
