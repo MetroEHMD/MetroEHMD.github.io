@@ -24,7 +24,9 @@
 			This section can give a brief overview of what this year's game is and our strategies for
 			tackling it.
 		</p>
-		<br />
+	</section>
+	<br />
+	<section>
 		<h2>Important Dates</h2>
 		<ul id="important-dates">
 			<li><b>Kickoff:</b> January 10th, 2026.</li>
